@@ -1,0 +1,16 @@
+{
+  "hr": {
+    "translation": {
+      "favorites": "Favoriti",
+      "most_traded": "Najviše trgovane",
+      "user_stocks": "Moje dionice",
+      "password_doesnt_match": "Lozinke se ne podudaraju",
+      "password_required_message": "Lozinka je obavezna",
+      "email_required_message": "Email je obavezan",
+      "password_min_length_invalid": "Minimalno 5 znakova",
+      "password_max_length_invalid": "Maksimalno 100 znakova",
+      "email_pattern_invalid": "Neispravan email",
+      "login_error_message": "Neispravni podaci, pokušajte ponovo"
+    }
+  }
+}
