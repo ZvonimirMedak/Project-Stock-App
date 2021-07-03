@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core";
 import MainRouter from "../router/MainRouter";
 import firebase from "firebase";
+<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "../reducers";
 import { setUser } from "../actions/authAction";
@@ -13,6 +14,13 @@ const AuthentificationWrapper = () => {
   const user = useSelector((state: State) => state.auth.user);
   const dispatch = useDispatch();
   const [isMounted, setIsMounted] = React.useState<boolean>(false);
+=======
+
+import { firebaseConfig } from "../consts/firebaseEnv";
+
+const AuthentificationWrapper = () => {
+  const classes = useClasses();
+>>>>>>> dev
 
   const firebaseCheck = React.useCallback((): Promise<firebase.User | null> => {
     return new Promise((resolve) => {
@@ -26,6 +34,7 @@ const AuthentificationWrapper = () => {
     try {
       const response = await firebaseCheck();
       if (response && response.email && response.uid) {
+<<<<<<< HEAD
         dispatch(
           setUser({ email: response.email, uid: response.uid, password: "" })
         );
@@ -35,6 +44,16 @@ const AuthentificationWrapper = () => {
       setIsMounted(true);
     }
   }, [dispatch, firebaseCheck]);
+=======
+        /* something like this
+        dispatch(
+          setUser({ email: response.email, uid: response.uid, password: "" })
+        );
+        */
+      }
+    } catch (error) {}
+  }, [firebaseCheck]);
+>>>>>>> dev
 
   React.useEffect(() => {
     if (firebase.apps.length === 0) {
@@ -50,6 +69,7 @@ const AuthentificationWrapper = () => {
     checkIfAllreadLogin();
   }, [checkIfAllreadLogin]);
 
+<<<<<<< HEAD
   if (isMounted) {
     return (
       <>
@@ -61,6 +81,15 @@ const AuthentificationWrapper = () => {
     );
   }
   return null;
+=======
+  return (
+    <>
+      <main className={classes.main}>
+        <MainRouter authentificationToken={""} />
+      </main>
+    </>
+  );
+>>>>>>> dev
 };
 
 const useClasses = makeStyles({

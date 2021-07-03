@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, IconButton, makeStyles } from "@material-ui/core";
+<<<<<<< HEAD
 import { OneRoute, routesNames } from "../consts/routeNames";
 import { useLocation } from "react-router";
 import { getActiveIndex } from "../helpers/routing";
@@ -14,6 +15,23 @@ import { setWallet } from "../actions/walletAction";
 import { firebaseCollections } from "../consts/firebaseEnv";
 import { setUser } from "../actions/authAction";
 import ExitToApp from "@material-ui/icons/ExitToApp";
+=======
+import { useLocation } from "react-router";
+import SettingsIcon from "@material-ui/icons/Settings";
+import { useDispatch, useSelector } from "react-redux";
+import ExitToApp from "@material-ui/icons/ExitToApp";
+import firebase from "firebase";
+
+import { OneRoute, routesNames } from "../consts/routeNames";
+import { getActiveIndex } from "../helpers/routing";
+import Route from "../components/Route";
+import { dimensions } from "../consts/dimensions";
+import { colors } from "../consts/colors";
+import UserModal from "../components/UserModal";
+import { setWallet } from "../actions/walletAction";
+import { firebaseCollections } from "../consts/firebaseEnv";
+import { setUser } from "../actions/authAction";
+>>>>>>> dev
 import { State } from "../reducers";
 interface Props {
   authentificationToken: string;
