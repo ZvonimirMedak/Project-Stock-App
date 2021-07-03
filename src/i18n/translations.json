@@ -20,7 +20,11 @@
       "password_min_length_invalid": "Minimalno 5 znakova",
       "password_max_length_invalid": "Maksimalno 100 znakova",
       "email_pattern_invalid": "Neispravan email",
-      "login_error_message": "Neispravni podaci, pokušajte ponovo"
+      "login_error_message": "Neispravni podaci, pokušajte ponovo",
+
+      "user_information": "Korisničke informacije",
+      "monetary_status": "Novčani status",
+      "update_wallet": "Ažuriraj novčanik"
     }
   }
 }
