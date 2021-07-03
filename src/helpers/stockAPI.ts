@@ -1,9 +1,11 @@
 import axios from "axios";
 import React from "react";
 import firebase from "firebase";
-import { Dispatch } from "redux";
-
 import { AllStocks, FavoriteStock, PurchasedStock } from "../consts/interfaces";
+import { Dispatch } from "redux";
+import { setNotification } from "../actions/notificationAction";
+import { translations } from "../i18n/translation";
+import { colors } from "../consts/colors";
 import { firebaseCollections } from "../consts/firebaseEnv";
 
 export const fetchMostTraded = async (
@@ -97,8 +99,22 @@ export const removeFavoriteStock = async (
     )
     .doc(uuid)
     .delete()
-    .then(() => {})
-    .catch(() => {});
+    .then(() => {
+      dispatch(
+        setNotification({
+          text: translations.successfully_removed_from_wishlist,
+          color: colors.success,
+        })
+      );
+    })
+    .catch(() => {
+      dispatch(
+        setNotification({
+          text: translations.something_went_wrong,
+          color: colors.fireBrick,
+        })
+      );
+    });
 };
 
 export const fetchCurrentValue = async (symbol: string) => {

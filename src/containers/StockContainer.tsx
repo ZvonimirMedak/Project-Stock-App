@@ -2,8 +2,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
-
+import { setNotification } from "../actions/notificationAction";
 import Spinner from "../components/Spinner";
+import { colors } from "../consts/colors";
 import { favoritesParams } from "../consts/headers/favorites";
 import { mostTradedParams } from "../consts/headers/mostTraded";
 import { purchasedParams } from "../consts/headers/purchasedParams";
@@ -67,8 +68,14 @@ const StockContainer = (props: Props) => {
       setSpinner(false);
     } catch (error) {
       setSpinner(false);
+      dispatch(
+        setNotification({
+          text: translations.something_went_wrong,
+          color: colors.fireBrick,
+        })
+      );
     }
-  }, [props.screenType]);
+  }, [props.screenType, dispatch]);
 
   React.useEffect(() => {
     fetchData();
@@ -130,10 +137,16 @@ const StockContainer = (props: Props) => {
           //@ts-ignore
           setStocks((curr) => curr.filter((el) => el.uuid !== uuid));
           setSellModalValue(undefined);
+          dispatch(
+            setNotification({
+              text: translations.successfully_sold_stock,
+              color: colors.success,
+            })
+          );
         }
       } catch (error) {}
     },
-    [walletStatus]
+    [walletStatus, dispatch]
   );
 
   const openSellModal = React.useCallback(async (stock: PurchasedStock) => {

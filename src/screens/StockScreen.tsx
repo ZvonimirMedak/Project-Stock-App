@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, IconButton, makeStyles } from "@material-ui/core";
+import { Box, IconButton, makeStyles, Typography } from "@material-ui/core";
 import { colors } from "../consts/colors";
 import Header from "../components/Header";
 import { AllStocks, FavoriteStock, PurchasedStock } from "../consts/interfaces";
@@ -9,6 +9,8 @@ import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import { ParamsInterface } from "../consts/headers/params";
 import { PaginationStep } from "../containers/StockContainer";
 import SellModal from "../components/SellModal";
+import { translations } from "../i18n/translation";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   stocks: AllStocks[] | PurchasedStock[] | FavoriteStock[];
@@ -37,6 +39,7 @@ const StockScreen = (props: Props) => {
     closeModal,
   } = props;
   const classes = useClasses();
+  const { t } = useTranslation();
 
   const MemoizedTable = React.useMemo(() => {
     if (stocks.length) {
@@ -50,8 +53,27 @@ const StockScreen = (props: Props) => {
         />
       );
     }
-    return null;
-  }, [stocks, tableParams, handleViewMorePress, removeStock, openSellModal]);
+    return (
+      <Box className={classes.textPosition}>
+        <Typography
+          variant="h4"
+          component="h2"
+          className={classes.nothingToShowText}
+        >
+          {t(translations.nothing_to_show)}
+        </Typography>
+      </Box>
+    );
+  }, [
+    stocks,
+    tableParams,
+    classes.textPosition,
+    classes.nothingToShowText,
+    handleViewMorePress,
+    removeStock,
+    t,
+    openSellModal,
+  ]);
 
   const MemoizedSellModal = React.useMemo(() => {
     if (sellModalValue) {
@@ -94,6 +116,18 @@ const useClasses = makeStyles({
     display: "flex",
     marginTop: 10,
     justifyContent: "space-evenly",
+  },
+  textPosition: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "90vh",
+  },
+  nothingToShowText: {
+    color: colors.white,
+    "@media (max-width: 700px)": {
+      fontSize: "22px",
+    },
   },
 });
 

@@ -2,12 +2,11 @@ import { Box, ListItemText, makeStyles } from "@material-ui/core";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { colors } from "../consts/colors";
+import { OneRoute, RouteIconType } from "../consts/routeNames";
 import StarOutlineRoundedIcon from "@material-ui/icons/StarOutlineRounded";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
-
-import { colors } from "../consts/colors";
-import { OneRoute, RouteIconType } from "../consts/routeNames";
 
 interface RouteTextOpacity {
   isActive: boolean;

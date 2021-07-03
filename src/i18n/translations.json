@@ -10,10 +10,6 @@
       "register": "Registriraj se",
       "register_account": "Registracija",
       "repeat_password": "Ponovi lozinku",
-
-      "favorites": "Favoriti",
-      "most_traded": "Najviše trgovane",
-      "user_stocks": "Moje dionice",
       "password_doesnt_match": "Lozinke se ne podudaraju",
       "password_required_message": "Lozinka je obavezna",
       "email_required_message": "Email je obavezan",
@@ -22,14 +18,34 @@
       "email_pattern_invalid": "Neispravan email",
       "login_error_message": "Neispravni podaci, pokušajte ponovo",
 
-      "user_information": "Korisničke informacije",
-      "monetary_status": "Novčani status",
-      "update_wallet": "Ažuriraj novčanik",
-
+      "favorites": "Favoriti",
+      "most_traded": "Najviše trgovane",
+      "user_stocks": "Moje dionice",
+      "my_favorite_stocks_title": "Favoriti",
+      "error_while_reading_data": "Pogreška prilikom čitanja podataka",
+      "current_price": "Trenutna cijena",
+      "add_to_wish_list": "Dodaj na listu želja",
+      "buy_stock": "Kupi dionicu",
+      "successfully_added_to_wishlist": "Uspješno dodano na listu želja",
+      "something_went_wrong": "Nešto je pošlo po zlu",
+      "successfully_buyed_stock": "Uspješno ste kupili dionicu",
+      "confirm_purchase": "Potvrdi kupnju",
+      "stock_purchase_title": "Kupnja dionice",
+      "stock_amount_label": "Broj dionica",
+      "stcok_price_label": "Ukupna cijena",
+      "successfully_removed_from_wishlist": "Uspješno uklonjeno iz favorita",
+      "stock_sell_title": "Prodaja dionice",
       "confirm_sell": "Potvrdite prodaju",
       "invested_value": "Uložena vrijednost",
       "current_value": "Trenutna vrijednost",
-      "total_amount_text": "Ukupno dionica"
+      "user_information": "Korisničke informacije",
+      "monetary_status": "Novčani status",
+      "update_wallet": "Ažuriraj novčanik",
+      "you_dont_have_enough_money": "Nemate dovoljno novca",
+      "successfully_added_to_wallet": "Uspješno ažuriran novčanik",
+      "successfully_sold_stock": "Uspješno ste prodali dionicu",
+      "total_amount_text": "Ukupno dionica",
+      "nothing_to_show": "Nema rezultata"
     }
   }
 }
