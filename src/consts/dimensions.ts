@@ -1,1 +1,3 @@
-export const dimensions = {};
+export const dimensions = {
+  asideWidth: "280px",
+};
