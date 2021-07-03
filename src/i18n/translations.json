@@ -24,7 +24,12 @@
 
       "user_information": "Korisničke informacije",
       "monetary_status": "Novčani status",
-      "update_wallet": "Ažuriraj novčanik"
+      "update_wallet": "Ažuriraj novčanik",
+
+      "confirm_sell": "Potvrdite prodaju",
+      "invested_value": "Uložena vrijednost",
+      "current_value": "Trenutna vrijednost",
+      "total_amount_text": "Ukupno dionica"
     }
   }
 }
