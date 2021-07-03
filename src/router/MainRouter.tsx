@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import LoginRegisterContaienr from "../containers/LoginRegisterContainer";
-import StockContainer from "../containers/StockContainer";
 import RouteGuard from "../components/RouteGuard";
 import { Routes } from "./Routes";
+import AsideWrapper from "../wrappers/AsideWrapper";
+import StockWrapper, { ScreenType } from "../containers/StockContainer";
 
 interface Props {
   authentificationToken: string;
@@ -13,14 +13,32 @@ interface Props {
 const MainRouter = (props: Props) => {
   return (
     <Router>
+      <AsideWrapper authentificationToken={props.authentificationToken} />
       <Switch>
         <Route exact path={Routes.Login} component={LoginRegisterContaienr} />
         <RouteGuard
+          key={ScreenType.FAVORITES}
           uid={props.authentificationToken}
           exact={true}
-          path={Routes.SpecificStock}
+          path={Routes.Favorites}
         >
-          <StockContainer />
+          <StockWrapper screenType={ScreenType.FAVORITES} />
+        </RouteGuard>
+        <RouteGuard
+          key={ScreenType.MOST_TRADED}
+          uid={props.authentificationToken}
+          exact={true}
+          path={Routes.MostTraded}
+        >
+          <StockWrapper screenType={ScreenType.MOST_TRADED} />
+        </RouteGuard>
+        <RouteGuard
+          key={ScreenType.PURCHASED}
+          uid={props.authentificationToken}
+          exact={true}
+          path={Routes.UserTrades}
+        >
+          <StockWrapper screenType={ScreenType.PURCHASED} />
         </RouteGuard>
       </Switch>
     </Router>
