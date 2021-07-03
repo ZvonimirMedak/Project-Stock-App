@@ -44,10 +44,9 @@ const StockContainer = (props: Props) => {
     AllStocks[] | PurchasedStock[] | FavoriteStock[]
   >([]);
   const [spinner, setSpinner] = React.useState<boolean>(true);
-  const [sellModalValue, setSellModalValue] =
-    React.useState<
-      { stock: PurchasedStock; currentValue: number } | undefined
-    >();
+  const [sellModalValue, setSellModalValue] = React.useState<
+    { stock: PurchasedStock; currentValue: number } | undefined
+  >();
   const stocksRef = React.useRef<
     AllStocks[] | PurchasedStock[] | FavoriteStock[]
   >([]);

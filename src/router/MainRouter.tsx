@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LoginRegisterContaienr from "../containers/LoginRegisterContaienr";
+import LoginRegisterContaienr from "../containers/LoginRegisterContainer";
 import RouteGuard from "../components/RouteGuard";
 import { Routes } from "./Routes";
 import AsideWrapper from "../wrappers/AsideWrapper";

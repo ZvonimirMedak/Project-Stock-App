@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import { Control, Controller } from "react-hook-form";
-import { loginFields, Steps } from "../containers/LoginRegisterContaienr";
+import { loginFields, Steps } from "../containers/LoginRegisterContainer";
 import { useTranslation } from "react-i18next";
 import { translations } from "../i18n/translation";
 import { loginAndCreateRules } from "../consts/rulesFunction";
