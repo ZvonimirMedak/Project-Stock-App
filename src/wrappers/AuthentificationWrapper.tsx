@@ -27,7 +27,7 @@ const AuthentificationWrapper = () => {
         */
       }
     } catch (error) {}
-  }, []);
+  }, [firebaseCheck]);
 
   React.useEffect(() => {
     if (firebase.apps.length === 0) {
