@@ -1,6 +1,16 @@
 {
   "hr": {
     "translation": {
+      "login": "Prijava",
+      "password": "Lozinka",
+      "email": "Email",
+      "login_to_your_account": "Prijavite se",
+      "dont_have_an_account": "Nemate račun?",
+      "allready_have_an_account": "Već imate račun?",
+      "register": "Registriraj se",
+      "register_account": "Registracija",
+      "repeat_password": "Ponovi lozinku",
+
       "favorites": "Favoriti",
       "most_traded": "Najviše trgovane",
       "user_stocks": "Moje dionice",
