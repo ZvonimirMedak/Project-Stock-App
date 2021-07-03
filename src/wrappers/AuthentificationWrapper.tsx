@@ -7,7 +7,6 @@ import { firebaseConfig } from "../consts/firebaseEnv";
 
 const AuthentificationWrapper = () => {
   const classes = useClasses();
-  const [isMounted, setIsMounted] = React.useState<boolean>(false);
 
   const firebaseCheck = React.useCallback((): Promise<firebase.User | null> => {
     return new Promise((resolve) => {
@@ -27,10 +26,7 @@ const AuthentificationWrapper = () => {
         );
         */
       }
-      setIsMounted(true);
-    } catch (error) {
-      setIsMounted(true);
-    }
+    } catch (error) {}
   }, []);
 
   React.useEffect(() => {
@@ -47,16 +43,13 @@ const AuthentificationWrapper = () => {
     checkIfAllreadLogin();
   }, [checkIfAllreadLogin]);
 
-  if (isMounted) {
-    return (
-      <>
-        <main className={classes.main}>
-          <MainRouter authentificationToken={""} />
-        </main>
-      </>
-    );
-  }
-  return null;
+  return (
+    <>
+      <main className={classes.main}>
+        <MainRouter authentificationToken={""} />
+      </main>
+    </>
+  );
 };
 
 const useClasses = makeStyles({
